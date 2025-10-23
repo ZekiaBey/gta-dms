@@ -1,41 +1,63 @@
 README.txt  
 
-Project Title: GTA-DMS (Game Character Data Management System)  
+Project Title: GTA-DMS (Game Character Data Management System) Phase 2
 Author: Zekia Beyene  
 Course: CEN 3024C Software Development I  
-Date: 10/13/2025  
+Date: 10/20/2025  
 
 
 Project Description
 
-The GTA-DMS project functions as a Java-based console application for data management.
-Users can perform character data management and analysis through this system which provides additional features for data handling:
+This console-based Java application manages GTA RP character data.
 
-- The system enables users to import data from CSV or text files 
-- Add new characters  
-- Update existing records  
-- Remove/archive characters  
-- List active characters  
-- Search for specific entries  
-- View the Top-N Most Wanted characters  
+The system allows you to:
+- Add, update, remove, and search characters
+- Load data from a CSV text file
+- Generate a Top-N Most Wanted report
+- Validate inputs and prevent duplicates
+- Run automated JUnit tests to verify functionality
 
 
 Instructions on running the program
 
-1. Find the JAR file: `out/gta-dms.jar` 
-2. Find the data file: `out/characters.txt` 
-3. Open Command Prompt to access the project out directory through the following command: cd "C:\Users\zekia\IdeaProjects\gta-dms\out"
-4. Run the program: java -jar gta-dms.jar
-5. Enter characters.txt when the system asks you to select a file for loading
+1. Open the project in IntelliJ IDEA or any Java IDE.
+2. Run the main entry file:
+ src/dms/Main.java
+3. OR launch using the executable JAR file:
+ java -jar gta-dms.jar
 
-File Reference
+How to Run Unit Tests
 
-File/Folder                Description 
+1. Locate the test file:
+ src/test/dms/CharacterManagerTest.java
+2. Right-click the file and choose:
+ "Run 'CharacterManagerTest'"
+3. Verify that all seven tests pass (green checkmarks).
+ One test can be modified temporarily to show a failing case for your demo video.
 
-`src/`                     Has all source code (`.java` files). 
-`out/gta-dms.jar`          The Executable JAR file. 
-`out/characters.txt`       Data samples. 
-`README.txt`               The instructions for the projects setup and execution. 
-`.gitignore`, `.iml`, etc. Just the IntelliJ configuration files. 
+Data File
+
+File: characters.txt 
+Contains at least 20 character records with these fields:
+id, handle, server, occupation, wantedLevel, bountyCents, reputation, active
+
+Project Structure
+
+.idea/
+out/
+src/
+ ├── main/java/dms/
+ │ ├── Main.java
+ │ ├── Character.java
+ │ ├── CharacterManager.java
+ │ ├── ReportGenerator.java
+ │ ├── Server.java
+ │ └── ThreatEntry.java
+ └── test/java/dms/
+ └── CharacterManagerTest.java
+characters.txt
+README.txt
+gta-dms.iml
+
 
    

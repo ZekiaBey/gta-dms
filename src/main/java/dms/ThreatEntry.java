@@ -11,9 +11,9 @@ public class ThreatEntry implements Comparable<ThreatEntry> {
     private final Character character;
     private final int threatScore;
 
-    public ThreatEntry(Character character, int threatScore) {
-        this.character = character;
-        this.threatScore = threatScore;
+    public ThreatEntry(Character c, int score) {
+        this.character = c;
+        this.threatScore = score;
     }
 
     public Character getCharacter() { return character; }
@@ -21,18 +21,13 @@ public class ThreatEntry implements Comparable<ThreatEntry> {
 
     @Override
     public int compareTo(ThreatEntry o) {
-        // Sort descending by threatScore
         return Integer.compare(o.threatScore, this.threatScore);
     }
 
     @Override
     public String toString() {
-        return String.format("%5d %-12s WL=%d bounty=%d rep=%d score=%d",
-                character.getId(),
-                character.getHandle(),
-                character.getWantedLevel(),
-                character.getBountyCents(),
-                character.getReputation(),
-                threatScore);
+        return String.format("%d %s WL=%d Bounty=%d Rep=%d Score=%d",
+                character.getId(), character.getHandle(), character.getWantedLevel(),
+                character.getBountyCents(), character.getReputation(), threatScore);
     }
 }
